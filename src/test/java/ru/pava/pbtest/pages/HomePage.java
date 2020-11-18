@@ -10,9 +10,9 @@ public class HomePage {
 	private WebDriverWait wait;
 	private final String xptext = "//*[text()='%s']";
 	private final String computersPageCaption = "Компьютерная техника";
-	private final String linkComputersText = "Компьютеры";
+	private final String linkComputersText = "Компьютерная техника";
 	private final String linkTabletsText = "Планшеты";
-	private final String buttonRegionLocator = "//*[text()='Да, спасибо']";
+//	private final String buttonRegionLocator = "//*[text()='Да, спасибо']";
 
 	public HomePage(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
@@ -20,8 +20,8 @@ public class HomePage {
 	}
 
 	public TabletsPage openPageTablets() {
-		// Select region
-		driver.findElement(By.xpath(buttonRegionLocator)).click();
+//		// Select region
+//		driver.findElement(By.xpath(buttonRegionLocator)).click();
 		driver.findElement(By.xpath(String.format(xptext, linkComputersText))).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(String.format(xptext, computersPageCaption))));
 		driver.findElement(By.xpath(String.format(xptext, linkTabletsText))).click();

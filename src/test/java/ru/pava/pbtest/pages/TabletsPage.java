@@ -27,7 +27,9 @@ public class TabletsPage {
 		driver.findElement(By.xpath(String.format(xptext, brandName))).click();
 		wait.until(ExpectedConditions.textToBePresentInElement(
 				driver.findElement(By.cssSelector(searchHeaderLocator)), brandName));
-		driver.findElement(By.xpath(String.format(xptext, sortType))).click();
+//		driver.findElement(By.xpath(String.format(xptext, sortType))).click();
+		driver.findElement(By.xpath(String.format(xptext, "Сначала популярное"))).click();
+		driver.findElement(By.xpath(String.format(xptext, "Сначала подешевле"))).click();
 		wait.until(ExpectedConditions.textToBePresentInElement(
 				driver.findElement(By.cssSelector(searchHeaderLocator)), priceSortCation));
 		return this;
